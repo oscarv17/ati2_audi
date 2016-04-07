@@ -1,19 +1,18 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Vehicle;
+use App\Model\Entity\Department;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Vehicles Model
+ * Departments Model
  *
- * @property \Cake\ORM\Association\HasMany $Appointments
- * @property \Cake\ORM\Association\HasMany $UserVehicles
+ * @property \Cake\ORM\Association\HasMany $Services
  */
-class VehiclesTable extends Table
+class DepartmentsTable extends Table
 {
 
     /**
@@ -26,15 +25,12 @@ class VehiclesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('vehicles');
-        $this->displayField('id');
+        $this->table('departments');
+        $this->displayField('name');
         $this->primaryKey('id');
 
-        $this->hasMany('Appointments', [
-            'foreignKey' => 'vehicle_id'
-        ]);
-        $this->hasMany('UserVehicles', [
-            'foreignKey' => 'vehicle_id'
+        $this->hasMany('Services', [
+            'foreignKey' => 'department_id'
         ]);
     }
 
@@ -51,17 +47,8 @@ class VehiclesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('model', 'create')
-            ->notEmpty('model');
-
-        $validator
-            ->requirePresence('year', 'create')
-            ->notEmpty('year');
-
-        $validator
-            ->decimal('price')
-            ->requirePresence('price', 'create')
-            ->notEmpty('price');
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         return $validator;
     }

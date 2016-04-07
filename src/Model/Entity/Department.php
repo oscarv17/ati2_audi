@@ -4,16 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Vehicle Entity.
+ * Department Entity.
  *
  * @property int $id
- * @property string $model
- * @property string $year
- * @property float $price
- * @property \App\Model\Entity\Appointment[] $appointments
- * @property \App\Model\Entity\UserVehicle[] $user_vehicles
+ * @property string $name
+ * @property \App\Model\Entity\Service[] $services
  */
-class Vehicle extends Entity
+class Department extends Entity
 {
 
     /**

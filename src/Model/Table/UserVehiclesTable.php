@@ -1,19 +1,19 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Vehicle;
+use App\Model\Entity\UserVehicle;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Vehicles Model
+ * UserVehicles Model
  *
- * @property \Cake\ORM\Association\HasMany $Appointments
- * @property \Cake\ORM\Association\HasMany $UserVehicles
+ * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $Vehicles
  */
-class VehiclesTable extends Table
+class UserVehiclesTable extends Table
 {
 
     /**
@@ -26,14 +26,15 @@ class VehiclesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('vehicles');
+        $this->table('user_vehicles');
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->hasMany('Appointments', [
-            'foreignKey' => 'vehicle_id'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER'
         ]);
-        $this->hasMany('UserVehicles', [
+        $this->belongsTo('Vehicles', [
             'foreignKey' => 'vehicle_id'
         ]);
     }
@@ -50,19 +51,20 @@ class VehiclesTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->requirePresence('model', 'create')
-            ->notEmpty('model');
-
-        $validator
-            ->requirePresence('year', 'create')
-            ->notEmpty('year');
-
-        $validator
-            ->decimal('price')
-            ->requirePresence('price', 'create')
-            ->notEmpty('price');
-
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['vehicle_id'], 'Vehicles'));
+        return $rules;
     }
 }

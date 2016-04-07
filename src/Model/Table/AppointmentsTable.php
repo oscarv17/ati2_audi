@@ -1,19 +1,20 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\User;
+use App\Model\Entity\Appointment;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Users Model
+ * Appointments Model
  *
- * @property \Cake\ORM\Association\HasMany $Appointments
- * @property \Cake\ORM\Association\HasMany $UserVehicles
+ * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $Vehicles
+ * @property \Cake\ORM\Association\BelongsTo $Services
  */
-class UsersTable extends Table
+class AppointmentsTable extends Table
 {
 
     /**
@@ -26,15 +27,20 @@ class UsersTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('users');
+        $this->table('appointments');
         $this->displayField('name');
         $this->primaryKey('id');
 
-        $this->hasMany('Appointments', [
-            'foreignKey' => 'user_id'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER'
         ]);
-        $this->hasMany('UserVehicles', [
-            'foreignKey' => 'user_id'
+        $this->belongsTo('Vehicles', [
+            'foreignKey' => 'vehicle_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Services', [
+            'foreignKey' => 'service_id'
         ]);
     }
 
@@ -55,22 +61,9 @@ class UsersTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->requirePresence('last_name', 'create')
-            ->notEmpty('last_name');
-
-        $validator
-            ->requirePresence('password', 'create')
-            ->notEmpty('password');
-
-        $validator
-            ->email('email')
-            ->requirePresence('email', 'create')
-            ->notEmpty('email');
-
-        $validator
-            ->date('birth_date')
-            ->requirePresence('birth_date', 'create')
-            ->notEmpty('birth_date');
+            ->dateTime('date')
+            ->requirePresence('date', 'create')
+            ->notEmpty('date');
 
         return $validator;
     }
@@ -84,7 +77,9 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['vehicle_id'], 'Vehicles'));
+        $rules->add($rules->existsIn(['service_id'], 'Services'));
         return $rules;
     }
 }

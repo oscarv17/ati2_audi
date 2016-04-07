@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\VehiclesTable;
+use App\Model\Table\VhiclesImagesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\VehiclesTable Test Case
+ * App\Model\Table\VhiclesImagesTable Test Case
  */
-class VehiclesTableTest extends TestCase
+class VhiclesImagesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\VehiclesTable
+     * @var \App\Model\Table\VhiclesImagesTable
      */
-    public $Vehicles;
+    public $VhiclesImages;
 
     /**
      * Fixtures
@@ -24,6 +24,7 @@ class VehiclesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.vhicles_images',
         'app.vehicles',
         'app.appointments',
         'app.users',
@@ -40,8 +41,8 @@ class VehiclesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Vehicles') ? [] : ['className' => 'App\Model\Table\VehiclesTable'];
-        $this->Vehicles = TableRegistry::get('Vehicles', $config);
+        $config = TableRegistry::exists('VhiclesImages') ? [] : ['className' => 'App\Model\Table\VhiclesImagesTable'];
+        $this->VhiclesImages = TableRegistry::get('VhiclesImages', $config);
     }
 
     /**
@@ -51,7 +52,7 @@ class VehiclesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Vehicles);
+        unset($this->VhiclesImages);
 
         parent::tearDown();
     }
@@ -72,6 +73,16 @@ class VehiclesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

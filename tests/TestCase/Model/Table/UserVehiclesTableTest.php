@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\VehiclesTable;
+use App\Model\Table\UserVehiclesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\VehiclesTable Test Case
+ * App\Model\Table\UserVehiclesTable Test Case
  */
-class VehiclesTableTest extends TestCase
+class UserVehiclesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\VehiclesTable
+     * @var \App\Model\Table\UserVehiclesTable
      */
-    public $Vehicles;
+    public $UserVehicles;
 
     /**
      * Fixtures
@@ -24,12 +24,9 @@ class VehiclesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.vehicles',
-        'app.appointments',
-        'app.users',
         'app.user_vehicles',
-        'app.services',
-        'app.departments'
+        'app.users',
+        'app.vehicles'
     ];
 
     /**
@@ -40,8 +37,8 @@ class VehiclesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Vehicles') ? [] : ['className' => 'App\Model\Table\VehiclesTable'];
-        $this->Vehicles = TableRegistry::get('Vehicles', $config);
+        $config = TableRegistry::exists('UserVehicles') ? [] : ['className' => 'App\Model\Table\UserVehiclesTable'];
+        $this->UserVehicles = TableRegistry::get('UserVehicles', $config);
     }
 
     /**
@@ -51,7 +48,7 @@ class VehiclesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Vehicles);
+        unset($this->UserVehicles);
 
         parent::tearDown();
     }
@@ -72,6 +69,16 @@ class VehiclesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

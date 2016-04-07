@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * VehiclesFixture
+ * VhiclesImagesFixture
  *
  */
-class VehiclesFixture extends TestFixture
+class VhiclesImagesFixture extends TestFixture
 {
 
     /**
@@ -18,9 +18,9 @@ class VehiclesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'model' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'year' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'price' => ['type' => 'decimal', 'length' => 10, 'precision' => 2, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
+        'name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'principal' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'vehicles_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -39,9 +39,9 @@ class VehiclesFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'model' => 'Lorem ipsum dolor sit amet',
-            'year' => 'Lorem ipsum dolor sit amet',
-            'price' => 1.5
+            'name' => 'Lorem ipsum dolor sit amet',
+            'principal' => 'Lorem ipsum dolor sit amet',
+            'vehicles_id' => 1
         ],
     ];
 }

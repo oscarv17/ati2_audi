@@ -8,8 +8,11 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property string $last_name
  * @property string $password
  * @property string $email
+ * @property \Cake\I18n\Time $birth_date
+ * @property \App\Model\Entity\Appointment[] $appointments
  * @property \App\Model\Entity\UserVehicle[] $user_vehicles
  */
 class User extends Entity

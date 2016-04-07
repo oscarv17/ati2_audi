@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\VehiclesTable;
+use App\Model\Table\ServicesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\VehiclesTable Test Case
+ * App\Model\Table\ServicesTable Test Case
  */
-class VehiclesTableTest extends TestCase
+class ServicesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\VehiclesTable
+     * @var \App\Model\Table\ServicesTable
      */
-    public $Vehicles;
+    public $Services;
 
     /**
      * Fixtures
@@ -24,12 +24,11 @@ class VehiclesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.vehicles',
+        'app.services',
+        'app.departments',
         'app.appointments',
         'app.users',
-        'app.user_vehicles',
-        'app.services',
-        'app.departments'
+        'app.vehicles'
     ];
 
     /**
@@ -40,8 +39,8 @@ class VehiclesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Vehicles') ? [] : ['className' => 'App\Model\Table\VehiclesTable'];
-        $this->Vehicles = TableRegistry::get('Vehicles', $config);
+        $config = TableRegistry::exists('Services') ? [] : ['className' => 'App\Model\Table\ServicesTable'];
+        $this->Services = TableRegistry::get('Services', $config);
     }
 
     /**
@@ -51,7 +50,7 @@ class VehiclesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Vehicles);
+        unset($this->Services);
 
         parent::tearDown();
     }
@@ -72,6 +71,16 @@ class VehiclesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
