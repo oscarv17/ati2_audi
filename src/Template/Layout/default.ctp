@@ -26,32 +26,48 @@ $cakeDescription = 'AudiMotors';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('bootstrap.css') ?> 
+    <!-- <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('cake.css') ?> -->
+    <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('carousel.css') ?> 
+    <?= $this->Html->css('styles.css') ?> 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-   <!--  <?= $this->fetch('script') ?> -->
+     <?= $this->fetch('script') ?> 
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank">Documentation</a></li>
-                <li><a target="_blank">API</a></li>
-            </ul>
+    <nav class="navbar navbar-default" id="custom-bootstrap-menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarColl" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"> <img src="/img/audi.png" alt="Audi"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarColl">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="#">Vehículos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Conocenos</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <?= $this->Flash->render() ?> 
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
+    <?= $this->fetch('content') ?>
+
     <footer>
+        <h1>S&iacute;guenos!</h1>
+        <h6>redes sociales aqui</h6>
+        <img src="/img/audifoot.png" width="220"    height="120">
     </footer>
+    <?= $this->Html->script('jquery-2.2.3.min') ?>
+    <?= $this->Html->script('bootstrap') ?>
+    <?= $this->Html->script('main') ?>
 </body>
 </html>
