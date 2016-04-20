@@ -52,8 +52,14 @@ $cakeDescription = 'AudiMotors';
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="#">Vehículos</a></li>
                     <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Conocenos</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+  <!--                   -->
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nosotros</a>
+                        <ul class="dropdown-menu">
+                         <li><a href="#">Conocenos</a></li>
+                         <li><a href="#">Contáctanos</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

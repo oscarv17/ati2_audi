@@ -61,7 +61,8 @@ footer .foot-img {
 #custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(119, 119, 119, 1);
 }
-#custom-bootstrap-menu.navbar-default {
+#custom-bootstrap-menu.navbar-default,
+.dropdown-menu {
     font-size: 17px;
     background-color: rgba(0, 0, 0, 1);
     background: -webkit-linear-gradient(top, rgba(120, 112, 113, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -71,19 +72,25 @@ footer .foot-img {
     margin-bottom: 0px;
 
 }
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a,
+.dropdown-menu>li>a {
     color: rgba(227, 223, 223, 1);
     background-color: rgba(248, 248, 248, 0);
 
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
     color: rgba(227, 223, 223, 1);
     background-color: rgba(163, 21, 21, 1);
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
-#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus,
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus {
     color: rgba(227, 223, 223, 1);
     background-color: rgba(226, 29, 56, 1);
     background: -webkit-linear-gradient(top, rgba(240, 67, 87, 1) 0%, rgba(226, 29, 56, 1) 100%);
@@ -109,6 +116,9 @@ footer .foot-img {
     height: 70px;
     padding-top: 0;
 }
+
+
+
 
 /*  HOME STYLES    */
 

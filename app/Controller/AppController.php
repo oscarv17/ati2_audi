@@ -54,7 +54,7 @@ class AppController extends Controller {
         )
     );
      public function beforeFilter() {
-        $this->Auth->allow('index','registrar');
+        $this->Auth->allow('index','registrar','checkLogin');
        
     }
     public function printWithFormat($prin,$va=false) {

@@ -38,5 +38,29 @@ class UsersController extends AppController {
 
 
 	}
+	public function checkLogin() {
+		$this->autoRender=false;
+		
+		$email=$this->request->data['email'];
+		$pass=$this->request->data['password'];
+		$pass=Security::hash($pass, 'md5');
+
+		$user=$this->User->find('first',array(
+			'conditions' => array(
+				'User.email' => $email,
+				'User.password' => $pass
+				),
+			'recursive' => '-1'
+ 
+			));
+
+		if(count($user) > 0) {
+			$this->Session->write('Auth.User',$user);
+			echo json_encode(array('sucess' => true));
+		}else {
+			echo json_encode(array('sucess' => false));
+		}
+
+	}
 
 }

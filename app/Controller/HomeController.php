@@ -48,6 +48,7 @@ class HomeController extends AppController {
 		$isLogin=0;
 		
 		if($this->Auth->user()!=null){
+			
 			$isLogin=1;
 		}
 		$this->set(compact('isLogin'));

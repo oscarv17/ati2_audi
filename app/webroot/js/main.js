@@ -23,21 +23,41 @@ $('.carousel img').each(function() {
 /*  Login  */
 $('#UsersBirthDate').attr('type','date');
 
-$('#sendRegistration').click(function(){
+$('#login').click(function(){
   console.log("hola");
-   registrar();
+   login();
 
 });
 
- function registrar() {
+ function login() {
 
-    var url= window.location.protocol + "//" + window.location.hostname + '/users/registrar';
+    var email=$('#loginEmail').val();
+    var pass=$('#loginPass').val();
+
+     var params={
+
+       email: email,
+       password: pass
+
+     };
+
+    var url= window.location.protocol + "//" + window.location.hostname + '/users/checkLogin';
     $.ajax({
         url: url,
         method: 'post',
+        data: params,
         success: function(response){
-            $('.container-login').empty();
-            $('.container-login').html(response);
+          
+          var respObj = eval('('+response+')');
+          if(respObj.sucess) {
+
+            window.location = window.location.protocol + "//" + window.location.hostname;
+
+          }
+          else {
+           alert("Usuario o contraseña invalida");
+          }
+          
 
         }
     });
