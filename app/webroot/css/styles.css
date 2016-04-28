@@ -21,8 +21,9 @@ h1,h2,h3 {
 	color: #E3DFDF;
 }
 
-h4,h5,h6,p {
+h4,h5,h6,p,span {
 	font-family: Audi Type Normal;
+    color: #E3DFDF;
 }
 
 footer {
@@ -38,12 +39,29 @@ footer .foot-img {
 	width: 220px;
 }
 
+.redes{
+    display: block;
+    margin: 0 auto;
+    width: 630px;
+    height: 30px;
+}
+
+
+.line{
+    width: 59px; 
+    height: 35px;
+}
+
 .no-margin {
 	margin: 0;
 }
 
 .padding-botton {
 	padding-bottom: 70px;
+}
+
+.padding-top {
+    padding-top: 20px;
 }
 
 .btn-red {
@@ -56,6 +74,11 @@ footer .foot-img {
 	border-width: 3px;
 	width: 100px;
 }
+
+/*.border-l {
+    border-left-width: 3px;
+    border-
+}*/
 
 /*           MENU STYLES           */
 #custom-bootstrap-menu.navbar-default .navbar-brand {
@@ -118,7 +141,14 @@ footer .foot-img {
 }
 
 
-
+.loader {
+    background-color: rgba(0,0,0,0.8);
+    padding: 10%;
+}
+.loader img {
+   margin: 0 auto ;
+   display: block;
+}
 
 /*  HOME STYLES    */
 
@@ -141,8 +171,70 @@ footer .foot-img {
 	background-color: rgba(0,0,0,0.4);
 }
 
-/*  LOGIN  */
+/*  USER  */
 .container-login {
+    color: #EAEAEA;
+    padding: 80px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.container-profile {
+    padding: 100px;
+    background-color: rgba(0,0,0,0.8);
+    color: #EAEAEA;
+}
+
+#imgProfile {
+    min-height: 100px;
+    max-height: 300px;
+
+}
+
+/* CATALOGO */
+.container-store {
+    color: #EAEAEA;
+    padding: 80px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.vehicle-list .thumbnail {
+    width: 350px; 
+    height: 270px;
+    color: #E21D38;
+    background-image: url(/img/wall.png);
+}
+
+.vehicle-list h3,
+.vehicle-list p {
+
+    color: #383435;
+
+}
+.thumbnail img {
+    max-height: 200px;
+}
+
+/* services   */
+.container-services {
+    color: #EAEAEA;
+    padding: 80px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.service-list h3,
+.service-list p {
+
+    color: #383435;
+
+}
+.service-list .thumbnail {
+    width: 350px; 
+    height: 270px;
+    color: #E21D38;
+    background-image: url(/img/wall.png);
+}
+/* Conocenos */
+.container-meet {
     color: #EAEAEA;
     padding: 80px;
     background-color: rgba(0,0,0,0.8);

@@ -6,6 +6,7 @@ App::uses('AppModel', 'Model');
  * @property User $User
  * @property Vehicle $Vehicle
  * @property Service $Service
+ * @property AppointmentStatus $AppointmentStatus
  */
 class Appointment extends AppModel {
 
@@ -42,6 +43,13 @@ class Appointment extends AppModel {
 		'Service' => array(
 			'className' => 'Service',
 			'foreignKey' => 'service_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'AppointmentStatus' => array(
+			'className' => 'AppointmentStatus',
+			'foreignKey' => 'appointment_status_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

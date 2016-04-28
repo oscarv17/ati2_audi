@@ -10,7 +10,7 @@
         <div class="carousel-caption transparency">
           <h1>Nuestra Tienda</h1>
          <p>Visita nuestra tienda para conseguir los &uacute;ltimos modelos de Audi</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <p><a class="btn btn-lg btn-red listVehicles" href="/vehiculos" role="button">Cat&aacute;logo</a></p>
         </div>
       </div>
       <img class="first-slide" src="img/slide1.png" alt="First slide">
@@ -22,7 +22,7 @@
         <div class="carousel-caption transparency">
           <h1>Servicios</h1>
           <p>P&iacute;de tu cita para hacer servicio a tu veh&iacute;culo</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+     <!--      <p><a class="btn btn-lg btn-red " href="#" role="button">Mis Citas</a></p> -->
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="carousel-caption transparency">
           <h1>Audi es nuestra pasi&oacute;n</h1>
           <p>S&iacute;guenos en nuestras redes sociales para estar enterado de eventos</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          <p><a class="btn btn-lg btn-red " href="#" role="button">Seguir</a></p>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
      <?php if($isLogin==0){ ?>
      <a type="button" class="btn btn-lg btn-red" role="button" href="/iniciar_sesion">Iniciar Sesión</a>
     <?php }else{ ?>
-       <a type="button" class="btn btn-lg btn-red" role="button" href="/iniciar_sesion">Ingresar</a>
+       <a type="button" class="btn btn-lg btn-red profile" role="button">Ingresar</a>
     <?php } ?>
     </div>  
    </div>
@@ -64,7 +64,7 @@
         <h2>Conócenos</h2>
         <hr class="hr-red">
         <h4>Conoce el origen de la empresa, su misi&oacute;n y visi&oacute;n</h4>
-        <button type="button" class="btn btn-lg btn-red">Leer m&aacute;s</button>
+        <a class="btn btn-lg btn-red" href="/conocenos" role="button">Leer m&aacute;s</a>
      </div>
         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
         <h2>Contáctanos</h2>

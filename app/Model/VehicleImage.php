@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * VhiclesImage Model
+ * VehicleImage Model
  *
- * @property Vehicles $Vehicles
+ * @property Vehicle $Vehicle
  */
-class VhiclesImage extends AppModel {
+class VehicleImage extends AppModel {
 
 /**
  * Display field
@@ -23,9 +23,9 @@ class VhiclesImage extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Vehicles' => array(
-			'className' => 'Vehicles',
-			'foreignKey' => 'vehicles_id',
+		'Vehicle' => array(
+			'className' => 'Vehicle',
+			'foreignKey' => 'vehicle_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

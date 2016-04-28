@@ -35,7 +35,7 @@ class HomeController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Service');
 
 /**
  * Displays a view
@@ -52,6 +52,31 @@ class HomeController extends AppController {
 			$isLogin=1;
 		}
 		$this->set(compact('isLogin'));
+		
+	}
+	public function listServices() {
+
+		$services=$this->Service->find('all',array(
+			'recursive' => '-1',
+			'fields' => array('Service.id','Service.name','ServiceImage.name'),
+			'joins' => array(
+				array(
+		            'table' => 'service_images',
+		            'alias' => 'ServiceImage',
+		            'type' => 'INNER',
+		            'conditions' => array(
+		                'ServiceImage.service_id = Service.id'
+		            )
+
+				)
+			)
+			));
+		//$this->printWithFormat($services,true);
+		$this->set(compact('services'));
+
+	}
+
+	public function meet(){
 		
 	}
 }

@@ -220,7 +220,7 @@ Configure::write('Routing.prefixes', array('admin'));
  */
 	Configure::write('Session', array(
 		'defaults' => 'php',
-		'timeout' => '2',
+		'timeout' => '15',
 		'autoRegenerate' => true
 	));
 

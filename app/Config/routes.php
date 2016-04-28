@@ -27,6 +27,13 @@
  */
 	Router::connect('/', array('controller' => 'home', 'action' => 'index'));
 	Router::connect('/iniciar_sesion', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/vehiculos', array('controller' => 'vehicles', 'action' => 'listVehicles'));
+	Router::connect('/perfil', array('controller' => 'users', 'action' => 'profile'));
+	Router::connect('/servicios', array('controller' => 'home', 'action' => 'listServices'));
+	Router::connect('/conocenos', array('controller' => 'home', 'action' => 'meet'));
+
+
+
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
